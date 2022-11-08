@@ -1,0 +1,37 @@
+body {
+  background-color: #001253;
+  text-align: center;
+}
+
+h1 {
+  font-family: "Press Start 2P", cursive;
+  color: white;
+}
+
+.btnn {
+  color: #fff;
+  background-color: aqua;
+  height: 200px;
+  width: 200px;
+  margin: 30px;
+  border-radius: 25px;
+  border-style: solid;
+  border-color: white;
+  border-width: 7px;
+}
+
+.green {
+  background-color: green;
+}
+
+.red {
+  background-color: red;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.blue {
+  background-color: blue;
+}
