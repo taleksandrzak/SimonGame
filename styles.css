@@ -20,18 +20,18 @@ h1 {
   border-width: 7px;
 }
 
-.green {
+#green {
   background-color: green;
 }
 
-.red {
+#red {
   background-color: red;
 }
 
-.yellow {
+#yellow {
   background-color: yellow;
 }
 
-.blue {
+#blue {
   background-color: blue;
 }

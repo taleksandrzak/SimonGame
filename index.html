@@ -19,29 +19,35 @@
     <link rel="stylesheet" href="styles.css" />
     <title>Simon Says</title>
   </head>
-  <body>
-    <h1 class="my-5">Press any key to start</h1>
+  <body class="gameOk">
+    <!-- Heading -->
+    <h1 id="heading" class="my-5">Press any key to start</h1>
 
+    <!-- Buttons -->
     <div class="container-fluid">
       <div class="row">
         <div class="col-6 d-flex justify-content-end">
-          <div class="btnn green"></div>
+          <div id="green" class="btnn"></div>
         </div>
         <div class="col-6 d-flex justify-content-start">
-          <div class="btnn red"></div>
+          <div id="red" class="btnn"></div>
         </div>
       </div>
 
       <div class="row">
         <div class="col-6 d-flex justify-content-end">
-          <div class="btnn yellow"></div>
+          <div id="yellow" class="btnn"></div>
         </div>
         <div class="col-6 d-flex justify-content-start">
-          <div class="btnn blue"></div>
+          <div id="blue" class="btnn"></div>
         </div>
       </div>
     </div>
 
+    <!-- Footer -->
+    <h1 id="footer" class="my-5"></h1>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="index.js"></script>
   </body>
 </html>
