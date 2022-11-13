@@ -17,10 +17,7 @@ $(document).keypress(function () {
     gameStatus = false;
     let levelColor = takeRandomColor();
     gamePattern.push(levelColor);
-    setTimeout(function () {
-      buttonFlash(levelColor);
-      playSound(levelColor);
-    }, 500);
+    buttonFlash(levelColor);
   }
 });
 
@@ -30,8 +27,7 @@ $(".btnn").click(function (event) {
     j++;
     let clickColor = event.target.id;
     userPattern.push(clickColor);
-    buttonFlash(clickColor);
-    playSound(clickColor);
+    buttonFlashQuick(clickColor);
 
     if (gamePattern[j] == userPattern[j]) {
     } else {
@@ -48,18 +44,15 @@ $(".btnn").click(function (event) {
           gameStatus = false;
           let levelColor = takeRandomColor();
           gamePattern.push(levelColor);
-          setTimeout(function () {
-            buttonFlash(levelColor);
-            playSound(levelColor);
-          }, 1000);
+          buttonFlash(levelColor);
         }
       });
     }
 
     if (j === gameLevel) {
-      setTimeout(nextLevel, 1000);
       userPattern = [];
       j = -1;
+      nextLevel();
     }
   }
 });
@@ -71,20 +64,25 @@ function takeRandomColor() {
 
 // function for button flasing
 function buttonFlash(color) {
-  $("#" + color)
-    .fadeOut(200)
-    .fadeIn(200);
-}
-
-function playSound(color) {
-  eval(color + "Sound").play();
+  setTimeout(function () {
+    $("#" + color)
+      .fadeOut(200)
+      .fadeIn(200);
+    eval(color + "Sound").play();
+  }, 1000);
 }
 
 function nextLevel() {
   let levelColor = takeRandomColor();
   gamePattern.push(levelColor);
   buttonFlash(levelColor);
-  playSound(levelColor);
   gameLevel++;
   $("#footer").text("Level " + gameLevel);
+}
+
+function buttonFlashQuick(color) {
+  $("#" + color)
+    .fadeOut(100)
+    .fadeIn(100);
+  eval(color + "Sound").play();
 }
